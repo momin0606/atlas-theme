@@ -21,7 +21,7 @@ class App extends Component {
         <Switch>
           <div className="App">
             <Header />
-            <div style={{ marginTop: "5%" }}>
+            <div className="main-div" style={{ marginTop: "5%" }}>
               <Route exact path="/" component={Home} />
               <Route
                 exact

@@ -26,7 +26,7 @@ export class Footer extends Component {
                   placeholder="Message"
                   type="textarea"
                 />
-                <Button className="">Submit</Button>
+                <button className="nav-top-btn">Submit</button>
               </Form>
             </Col>
           </Row>

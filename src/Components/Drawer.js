@@ -30,8 +30,8 @@ const useStyles = makeStyles({
 });
 const navTopBtn = {
   border: "none",
-  background: "transparent",
-  color: "#7c7c7c",
+  background: "#008060",
+  color: "white",
 };
 export default function TemporaryDrawer() {
   const classes = useStyles();
@@ -140,15 +140,14 @@ export default function TemporaryDrawer() {
     <>
       {["right"].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button
-            className="m-2"
-            style={navTopBtn}
+          <button
+            className="m-2 nav-top-btn"
             size="sm"
             onClick={toggleDrawer(anchor, true)}
           >
             {" "}
             <i className="fas fa-shopping-cart"></i>
-          </Button>
+          </button>
           <Drawer
             anchor={anchor}
             open={state[anchor]}

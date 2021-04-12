@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Card, CardBody, Col, Container, Input, Row } from "reactstrap";
 import Carousel from "react-gallery-carousel";
 import "react-gallery-carousel/dist/index.css";
+import DiscountComp from "../Components/DiscountComp";
 
 const images = [900, 800, 700, 600, 500].map((size) => ({
   src: `https://placedog.net/${size}/${size}`,
@@ -11,8 +12,8 @@ export class BedsheetProductDetail extends Component {
   render() {
     return (
       <>
-        <Container>
-          <Card>
+        <Container className="pt-5">
+          <Card className="mt-5">
             <CardBody>
               <Row>
                 <Col>
@@ -71,6 +72,7 @@ export class BedsheetProductDetail extends Component {
             </CardBody>
           </Card>
         </Container>
+        <DiscountComp />
       </>
     );
   }

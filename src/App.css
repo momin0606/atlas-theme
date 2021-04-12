@@ -1,16 +1,88 @@
 html {
   overflow-x: hidden;
 }
+body {
+  background: #002e25;
+}
 .nav-div {
   width: 100%;
   padding: 10px;
-  border-bottom: 1px solid #dcdcdc;
-  box-shadow: 0px 5px 10px #bbbbbb;
+  color: white;
+  box-shadow: 0px 1px 5px #ffffff;
   overflow-x: hidden;
+  background: #002e25;
 }
 .footer-div {
   width: 100%;
   padding: 10px;
-  border-top: 1px solid #dcdcdc;
-  box-shadow: 0px -5px 10px #bbbbbb;
+  color: white;
+  overflow-x: hidden;
+  background: #002e25;
+  box-shadow: 0px -1px 5px #ffffff;
+}
+.nav-btn {
+  border: none;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  border-width: 5px;
+  border-top-style: solid;
+  border-top-color: white;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.nav-btn:hover {
+  color: #008060;
+  border-top-color: #008060;
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  -o-transform: translateY(-2px);
+  transform: translateY(-2px);
+}
+.nav-btn.active {
+  color: #008060;
+  border-top-color: #008060;
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  -o-transform: translateY(-2px);
+  transform: translateY(-2px);
+}
+.nav-top-btn {
+  border: 2px solid #008060;
+  padding: 5px 10px;
+  font-weight: 500;
+  border-radius: 7rem;
+  background: #008060;
+  color: white;
+}
+.nav-top-btn:hover {
+  background: #004c3f;
+  border: 2px solid #ffffff;
+}
+.card-btn {
+  border: 2px solid #008060;
+  padding: 5px 10px;
+  font-weight: 500;
+  border-radius: 7rem;
+  background: #008060;
+  color: white;
+}
+.card-btn:hover {
+  background: #004c3f;
+  border: 2px solid #ffffff;
+}
+.main-div {
+  background: #002e25;
+  color: white;
+}
+.App {
+  background: #002e25;
+  color: white;
+}
+.home-col-2-bg {
+  background: #004c3f;
+  color: white;
 }

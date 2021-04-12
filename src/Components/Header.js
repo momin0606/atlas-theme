@@ -13,17 +13,6 @@ import {
   Row,
 } from "reactstrap";
 
-const navTopBtn = {
-  border: "none",
-  background: "transparent",
-  color: "#7c7c7c",
-};
-const navBtn = {
-  border: "none",
-  background: "transparent",
-  color: "#7c7c7c",
-  fontWeight: "bold",
-};
 export class Header extends Component {
   state = { modal: false, register: false };
   toggle = (e) => {
@@ -33,27 +22,23 @@ export class Header extends Component {
   render() {
     return (
       <>
-        <div
-          className="fixed-top nav-div p-0"
-          style={{ background: "#ffffff" }}
-        >
+        <div className="fixed-top nav-div p-0">
           <Row style={{ width: "100%" }}>
             <Col></Col>
             <Col lg={{ size: 6 }} className="text-center">
               <h3 className="mt-2 mb-2">Atlas</h3>
             </Col>
             <Col className="text-right ">
-              <Button
-                style={navTopBtn}
-                className="m-2 "
+              <button
+                className="m-2 nav-top-btn"
                 size="sm"
                 onClick={this.toggle}
               >
                 Login/Register
-              </Button>
-              <Button className="m-2" style={navTopBtn} size="sm">
+              </button>
+              <button className="m-2 nav-top-btn" size="sm">
                 <i className="fas fa-heart"></i>
-              </Button>
+              </button>
               {/* <Button className="m-2" style={navTopBtn} size="sm">
                 <i className="fas fa-shopping-cart"></i>
               </Button> */}
@@ -63,24 +48,24 @@ export class Header extends Component {
           <Row style={{ width: "100%" }}>
             <Col lg={{ size: 8, offset: 2 }} className="text-center">
               <Link to="/">
-                <Button style={navBtn} className="m-2" size="sm">
+                <button className="m-2 nav-btn active" size="sm">
                   Home
-                </Button>
+                </button>
               </Link>
               <Link to="/womencollection">
-                <Button style={navBtn} className="m-2" size="sm">
+                <button className="m-2 nav-btn" size="sm">
                   Women's Collection
-                </Button>
+                </button>
               </Link>
               <Link to="/bedsheets">
-                <Button style={navBtn} className="m-2" size="sm">
+                <button className="m-2 nav-btn" size="sm">
                   Bedsheets
-                </Button>
+                </button>
               </Link>
               <Link to="/contactus">
-                <Button style={navBtn} className="m-2" size="sm">
+                <button className="m-2 nav-btn" size="sm">
                   Contact Us
-                </Button>
+                </button>
               </Link>
             </Col>
           </Row>
