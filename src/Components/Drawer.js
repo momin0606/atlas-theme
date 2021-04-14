@@ -62,10 +62,13 @@ export default function TemporaryDrawer() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <div style={{ maxHeight: "100%", overflowY: "auto" }}>
+      <div
+        className="primary-bg-cust "
+        style={{ maxHeight: "100%", overflowY: "auto" }}
+      >
         {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => {
           return (
-            <Card>
+            <Card className="primary-bg-cust primary-cust-text">
               <CardBody>
                 <Row>
                   <Col xs={{ size: 4 }}>
@@ -82,21 +85,33 @@ export default function TemporaryDrawer() {
                     <p>$146</p>
                     <InputGroup>
                       <InputGroupAddon addonType="prepend">
-                        <Input size="sm" type="button" value="-" />
+                        <Input
+                          size="sm"
+                          type="button"
+                          value="-"
+                          className="primary-bg-cust primary-cust-text"
+                        />
                       </InputGroupAddon>
-                      <Input size="sm" type="number" readOnly />
+                      <Input
+                        size="sm"
+                        type="number"
+                        readOnly
+                        className="secondary-bg-cust primary-cust-text"
+                      />
                       <InputGroupAddon addonType="append" value={1}>
-                        <Input size="sm" type="button" value="+" />
+                        <Input
+                          size="sm"
+                          type="button"
+                          value="+"
+                          className="primary-bg-cust primary-cust-text"
+                        />
                       </InputGroupAddon>
                     </InputGroup>
-                    <Button
-                      className="mt-1"
-                      color="danger"
-                      type="button"
-                      size="sm"
-                    >
-                      Remove
-                    </Button>
+                    <div className="text-right">
+                      <button className="mt-3 card-btn cart-btn" size="sm">
+                        Remove <i class="fas fa-minus-circle"></i>
+                      </button>
+                    </div>
                   </Col>
                 </Row>
               </CardBody>
@@ -104,31 +119,34 @@ export default function TemporaryDrawer() {
           );
         })}
       </div>
-      <Divider style={{ marginTop: "130px" }} />
+      <Divider style={{ marginTop: "160px" }} />
       <Card
+        className="primary-bg-cust primary-cust-text primary-border"
         style={{
           position: "fixed",
           bottom: "0",
           width: "300px",
-          borderTop: "3px solid black",
           borderRadius: "0",
         }}
       >
         <CardBody>
           <Row>
-            <Col>
+            <Col xs={{ size: 6 }}>
               <h5>
                 <b>Total : </b>
               </h5>
             </Col>{" "}
-            <Col className="text-right">
+            <Col xs={{ size: 6 }} className="text-right">
               <h5>
                 <b>$149 </b>
               </h5>
+            </Col>
+            <Col>
               <br />
-              <Button color="success" size="sm">
-                Check Out
-              </Button>
+              <button className="mt-3 card-btn checkout-btn" size="sm">
+                Place Order&nbsp;
+                <i class="fas fa-clipboard-check"></i>
+              </button>
             </Col>
           </Row>
         </CardBody>

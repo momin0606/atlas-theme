@@ -1,40 +1,67 @@
+:root {
+  --primaryCust: #e9e9e9;
+  --secondaryCust: #ffffff;
+  --tertiaryCust: #118556;
+  --goldCust: #14a76c;
+  --textColorCust: #000000;
+}
+[class="dark-theme"] {
+  --primaryCust: #151514 !important;
+  --secondaryCust: #333533 !important;
+  --tertiaryCust: #6f716f !important;
+  --goldCust: #f5cb5c !important;
+  --textColorCust: white !important;
+}
+.primary-cust-text {
+  color: var(--textColorCust);
+}
+
 html {
   overflow-x: hidden;
 }
 body {
-  background: #002e25;
+  background: var(--primaryCust);
+}
+.primary-bg-cust {
+  background: var(--primaryCust) !important;
+}
+.secondary-bg-cust {
+  background: var(--secondaryCust) !important;
+}
+.primary-border {
+  border: 2px solid var(--textColorCust) !important;
 }
 .nav-div {
   width: 100%;
   padding: 10px;
-  color: white;
-  box-shadow: 0px 1px 5px #ffffff;
+  color: var(--textColorCust);
+  box-shadow: 0px 1px 5px var(--textColorCust);
   overflow-x: hidden;
-  background: #002e25;
+  background: var(--primaryCust);
 }
 .footer-div {
   width: 100%;
   padding: 10px;
-  color: white;
+  color: var(--textColorCust);
   overflow-x: hidden;
-  background: #002e25;
-  box-shadow: 0px -1px 5px #ffffff;
+  background: var(--primaryCust);
+  box-shadow: 0px -1px 5px var(--textColorCust);
 }
 .nav-btn {
   border: none;
   background: transparent;
-  color: white;
+  color: var(--textColorCust);
   font-weight: bold;
   display: inline-block;
   border-width: 5px;
   border-top-style: solid;
-  border-top-color: white;
+  border-top-color: var(--textColorCust);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 .nav-btn:hover {
-  color: #008060;
-  border-top-color: #008060;
+  color: var(--goldCust);
+  border-top-color: var(--goldCust);
   -webkit-transform: translateY(-2px);
   -moz-transform: translateY(-2px);
   -ms-transform: translateY(-2px);
@@ -42,8 +69,8 @@ body {
   transform: translateY(-2px);
 }
 .nav-btn.active {
-  color: #008060;
-  border-top-color: #008060;
+  color: var(--goldCust);
+  border-top-color: var(--goldCust);
   -webkit-transform: translateY(-2px);
   -moz-transform: translateY(-2px);
   -ms-transform: translateY(-2px);
@@ -51,38 +78,55 @@ body {
   transform: translateY(-2px);
 }
 .nav-top-btn {
-  border: 2px solid #008060;
+  border: 2px solid var(--tertiaryCust);
   padding: 5px 10px;
   font-weight: 500;
   border-radius: 7rem;
-  background: #008060;
-  color: white;
+  background: var(--tertiaryCust);
+  color: var(--textColorCust);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .nav-top-btn:hover {
-  background: #004c3f;
-  border: 2px solid #ffffff;
+  background: var(--secondaryCust);
+  border: 2px solid var(--goldCust);
+  color: var(--goldCust);
 }
 .card-btn {
-  border: 2px solid #008060;
+  border: 2px solid var(--tertiaryCust);
   padding: 5px 10px;
   font-weight: 500;
   border-radius: 7rem;
-  background: #008060;
-  color: white;
+  background: var(--tertiaryCust);
+  color: var(--textColorCust);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.card-btn.checkout-btn {
+  width: 100%;
+  padding: 10px 20px;
+}
+.card-btn.cart-btn {
+  width: 100%;
+  padding: 2px 5px;
 }
 .card-btn:hover {
-  background: #004c3f;
-  border: 2px solid #ffffff;
+  background: var(--secondaryCust);
+  border: 2px solid var(--goldCust);
+  color: var(--goldCust);
 }
 .main-div {
-  background: #002e25;
-  color: white;
+  background: var(--primaryCust);
+  color: var(--textColorCust);
 }
 .App {
-  background: #002e25;
-  color: white;
+  background: var(--primaryCust);
+  color: var(--textColorCust);
 }
 .home-col-2-bg {
-  background: #004c3f;
-  color: white;
+  background: var(--secondaryCust);
+  color: var(--textColorCust);
+}
+.close {
+  color: var(--textColorCust) !important;
 }

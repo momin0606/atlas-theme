@@ -14,7 +14,17 @@ import {
 } from "reactstrap";
 
 export class Header extends Component {
-  state = { modal: false, register: false };
+  state = { modal: false, register: false, dark: false };
+  darkTheme = (e) => {
+    e.preventDefault();
+    if (!this.state.dark) {
+      this.setState({ dark: true });
+      document.documentElement.classList.add("dark-theme");
+    } else {
+      this.setState({ dark: false });
+      document.documentElement.classList.remove("dark-theme");
+    }
+  };
   toggle = (e) => {
     e.preventDefault();
     this.setState({ modal: !this.state.modal });
@@ -24,7 +34,23 @@ export class Header extends Component {
       <>
         <div className="fixed-top nav-div p-0">
           <Row style={{ width: "100%" }}>
-            <Col></Col>
+            <Col>
+              {" "}
+              <button
+                className="mt-2 mb-2 ml-2 card-btn"
+                onClick={this.darkTheme}
+              >
+                {this.state.dark ? (
+                  <>
+                    <i class="fas fa-power-off"></i>&nbsp;Dark Theme
+                  </>
+                ) : (
+                  <>
+                    <i class="fas fa-power-off"></i>&nbsp;Light Theme
+                  </>
+                )}
+              </button>
+            </Col>
             <Col lg={{ size: 6 }} className="text-center">
               <h3 className="mt-2 mb-2">Atlas</h3>
             </Col>
@@ -70,15 +96,23 @@ export class Header extends Component {
             </Col>
           </Row>
         </div>
-        <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}>
+        <Modal
+          className="primary-bg-cust primary-border text-white"
+          isOpen={this.state.modal}
+          toggle={this.toggle}
+        >
+          <ModalHeader toggle={this.toggle} className="primary-bg-cust ">
             {this.state.register ? "Register" : "Login"}
           </ModalHeader>
-          <ModalBody>
+          <ModalBody className="primary-bg-cust">
             <Form hidden={this.state.register} className="text-center">
-              <Input className="m-2" type="email" placeholder="Email" />
-              <Input className="m-2" type="password" placeholder="Password" />
-              <Button className="m-2">Login</Button>
+              <Input className="mt-3 mb-3" type="email" placeholder="Email" />
+              <Input
+                className="mt-3 mb-3"
+                type="password"
+                placeholder="Password"
+              />
+              <button className="mt-3 mb-3 card-btn checkout-btn">Login</button>
               <p
                 onClick={(e) => {
                   e.preventDefault();
@@ -89,14 +123,20 @@ export class Header extends Component {
               </p>
             </Form>
             <Form hidden={!this.state.register} className="text-center">
-              <Input className="m-2" type="email" placeholder="Email" />
-              <Input className="m-2" type="password" placeholder="Password" />
+              <Input className="mt-3 mb-3" type="email" placeholder="Email" />
               <Input
-                className="m-2"
+                className="mt-3 mb-3"
+                type="password"
+                placeholder="Password"
+              />
+              <Input
+                className="mt-3 mb-3"
                 type="password"
                 placeholder="Confirm Password"
               />
-              <Button className="m-2">Register</Button>
+              <button className="mt-3 mb-3 card-btn checkout-btn">
+                Register
+              </button>
               <p
                 onClick={(e) => {
                   e.preventDefault();

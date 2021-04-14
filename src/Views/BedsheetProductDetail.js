@@ -13,7 +13,7 @@ export class BedsheetProductDetail extends Component {
     return (
       <>
         <Container className="pt-5">
-          <Card className="mt-5">
+          <Card className="mt-5 primary-bg-cust primary-border">
             <CardBody>
               <Row>
                 <Col>
@@ -26,11 +26,11 @@ export class BedsheetProductDetail extends Component {
                   />
                 </Col>
                 <Col className="pl-2 pr-2">
-                  <h2>Product Name</h2>
-                  <h5>
+                  <h2 className="mt-3 ml-3">Product Name</h2>
+                  <h5 className="mt-3 ml-3">
                     <b>$149</b>
                   </h5>
-                  <p>
+                  <p className="mt-3 ml-3">
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has been the industry's
                     standard dummy text ever since the 1500s, when an unknown
@@ -38,14 +38,18 @@ export class BedsheetProductDetail extends Component {
                     type specimen book. It has survived not only five centuries,
                     but also the
                   </p>
-                  <Input type="Submit" value="Add To Cart" />
-                  <Input type="Submit" value="Add To Fav" />
+                  <button className="mt-3 card-btn checkout-btn" size="sm">
+                    ADD TO FAVORITE&nbsp;<i className="fas fa-heart"></i>
+                  </button>
+                  <button className="mt-3 card-btn checkout-btn" size="sm">
+                    ADD TO CART&nbsp;<i className="fas fa-shopping-cart"></i>
+                  </button>
                 </Col>
               </Row>
               <Row className="mt-5">
                 <Col lg={{ size: 6 }}>
                   <h5>You May Also Like</h5>
-                  <Card>
+                  <Card className="primary-bg-cust primary-border">
                     <CardBody>
                       <Row>
                         <Col lg={{ size: 3 }}>
@@ -60,9 +64,13 @@ export class BedsheetProductDetail extends Component {
                           </p>
                           <p>$146</p>
                         </Col>
-                        <Col lg={{ size: 3 }}>
-                          <Input type="Submit" value="Add To Cart" />
-                          <Input type="Submit" value="Add To Fav" />
+                        <Col lg={{ size: 3 }} className="text-right">
+                          <button className="m-1 card-btn" size="sm">
+                            <i className="fas fa-heart"></i>
+                          </button>
+                          <button className="m-1 card-btn" size="sm">
+                            <i className="fas fa-shopping-cart"></i>
+                          </button>
                         </Col>
                       </Row>
                     </CardBody>

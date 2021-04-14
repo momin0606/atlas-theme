@@ -18,7 +18,7 @@ export class Checkout extends Component {
 
         <h3 className="text-center">Checkout</h3>
         <Container>
-          <Card>
+          <Card className="primary-bg-cust primary-border">
             <CardBody>
               <Row>
                 <Col style={{ minHeight: "60vh" }}>
@@ -39,13 +39,20 @@ export class Checkout extends Component {
                     </p>
                     <Row>
                       <Col className="text-right p-0">
-                        <Button className="m-2">Place Order</Button>
+                        <button
+                          className="mt-3 card-btn checkout-btn"
+                          size="sm"
+                        >
+                          Place Order&nbsp;
+                          <i class="fas fa-clipboard-check"></i>
+                        </button>
                       </Col>
                     </Row>
                   </Form>
                 </Col>
                 <Col className="pl-2 pr-2">
                   <div
+                    className="primary-border"
                     style={{
                       maxHeight: "60vh",
                       overflowY: "auto",
@@ -54,7 +61,7 @@ export class Checkout extends Component {
                   >
                     {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => {
                       return (
-                        <Card>
+                        <Card className="primary-bg-cust ">
                           <CardBody>
                             <Row>
                               <Col xs={{ size: 2 }}>
@@ -71,7 +78,7 @@ export class Checkout extends Component {
                                     </p>
                                     <p>$146</p>
                                   </Col>
-                                  <Col>
+                                  <Col className="text-right">
                                     <p>Quantity:4</p>
                                   </Col>
                                 </Row>
@@ -82,7 +89,7 @@ export class Checkout extends Component {
                       );
                     })}
                   </div>
-                  <hr />
+                  <hr className=" primary-border" />
                   <Row>
                     <Col>
                       <h5>Total :</h5>

@@ -25,7 +25,7 @@ export class ContactUs extends Component {
                   placeholder="Message"
                   type="textarea"
                 />
-                <Button className="ml-2">Submit</Button>
+                <button className="ml-2 nav-top-btn">Submit</button>
               </Form>
             </Col>
           </Row>

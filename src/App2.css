@@ -1,0 +1,114 @@
+html {
+  overflow-x: hidden;
+}
+body {
+  background: #151514;
+}
+.primary-bg-cust {
+  background: #151514 !important;
+}
+.secondary-bg-cust {
+  background: #333533 !important;
+}
+.primary-border {
+  border: 2px solid white !important;
+}
+.nav-div {
+  width: 100%;
+  padding: 10px;
+  color: white;
+  box-shadow: 0px 1px 5px #ffffff;
+  overflow-x: hidden;
+  background: #151514;
+}
+.footer-div {
+  width: 100%;
+  padding: 10px;
+  color: white;
+  overflow-x: hidden;
+  background: #151514;
+  box-shadow: 0px -1px 5px #ffffff;
+}
+.nav-btn {
+  border: none;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  border-width: 5px;
+  border-top-style: solid;
+  border-top-color: white;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.nav-btn:hover {
+  color: #f5cb5c;
+  border-top-color: #f5cb5c;
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  -o-transform: translateY(-2px);
+  transform: translateY(-2px);
+}
+.nav-btn.active {
+  color: #f5cb5c;
+  border-top-color: #f5cb5c;
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  -o-transform: translateY(-2px);
+  transform: translateY(-2px);
+}
+.nav-top-btn {
+  border: 2px solid #6f716f;
+  padding: 5px 10px;
+  font-weight: 500;
+  border-radius: 7rem;
+  background: #6f716f;
+  color: white;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.nav-top-btn:hover {
+  background: #333533;
+  border: 2px solid #f5cb5c;
+  color: #f5cb5c;
+}
+.card-btn {
+  border: 2px solid #6f716f;
+  padding: 5px 10px;
+  font-weight: 500;
+  border-radius: 7rem;
+  background: #6f716f;
+  color: white;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.card-btn.checkout-btn {
+  width: 100%;
+  padding: 10px 20px;
+}
+.card-btn.cart-btn {
+  width: 100%;
+  padding: 2px 5px;
+}
+.card-btn:hover {
+  background: #333533;
+  border: 2px solid #f5cb5c;
+  color: #f5cb5c;
+}
+.main-div {
+  background: #151514;
+  color: white;
+}
+.App {
+  background: #151514;
+  color: white;
+}
+.home-col-2-bg {
+  background: #333533;
+  color: white;
+}
+.close {
+  color: white !important;
+}
