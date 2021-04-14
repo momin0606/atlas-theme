@@ -15,12 +15,19 @@
 .primary-cust-text {
   color: var(--textColorCust);
 }
+video {
+  width: 100%;
+}
 
 html {
   overflow-x: hidden;
+  font-family: "Belleza", sans-serif;
 }
 body {
   background: var(--primaryCust);
+}
+.gold-text-cust {
+  color: var(--goldCust) !important;
 }
 .primary-bg-cust {
   background: var(--primaryCust) !important;

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardBody, Col, Container, Input, Row } from "reactstrap";
+import { Card, CardBody, Col, Container, Row } from "reactstrap";
 import Carousel from "react-gallery-carousel";
 import "react-gallery-carousel/dist/index.css";
 import DiscountComp from "../Components/DiscountComp";
@@ -56,6 +56,7 @@ export class WomenProductDetail extends Component {
                           <img
                             width="100%"
                             src="https://placedog.net/900/900"
+                            alt="hero"
                           ></img>
                         </Col>
                         <Col lg={{ size: 6 }}>

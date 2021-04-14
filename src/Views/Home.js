@@ -3,7 +3,9 @@ import { Container, UncontrolledCarousel } from "reactstrap";
 import Bedsheets from "../Components/Bedsheets";
 import DiscountComp from "../Components/DiscountComp";
 import Suits from "../Components/Suits";
-
+import { connect } from "react-redux";
+import { getSuits } from "../store/actions/suitsActions";
+import { getBedSheets } from "../store/actions/bedsheetsActions";
 const items = [
   {
     src:
@@ -28,13 +30,18 @@ const items = [
   },
 ];
 export class Home extends Component {
+  componentDidMount() {
+    this.props.getSuits();
+    this.props.getBedSheets();
+  }
   render() {
     return (
       <>
-        <UncontrolledCarousel
-          controls={false}
-          //   style={{ height: "30vh" }}
-          items={items}
+        <video
+          className="video mt-4"
+          src="/Women Collection.mp4"
+          autoPlay
+          loop
         />
         <Container>
           <Suits />
@@ -45,5 +52,23 @@ export class Home extends Component {
     );
   }
 }
+export function mapStateToProps(state) {
+  return {
+    uid: state.auth.uid,
+    loading: state.auth.requested,
+    registered: state.auth.registered,
+    suits: state.suits.suits,
+    bedsheets: state.bedsheets.bedsheets,
+  };
+}
+export function mapDispatchToProps(dispatch) {
+  return {
+    getSuits: () => dispatch(getSuits()),
+    getBedSheets: () => dispatch(getBedSheets()),
+    // login: (credentials) => dispatch(login(credentials)),
+    // register: (credentials, password) =>
+    // dispatch(register(credentials, password)),
+  };
+}
 
-export default Home;
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

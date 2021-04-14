@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Card, CardBody, CardImg, Col, Row } from "reactstrap";
+import { Card, CardBody, CardImg, Col, Row } from "reactstrap";
 
 export class Bedsheets extends Component {
   render() {

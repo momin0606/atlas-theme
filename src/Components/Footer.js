@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import { NavLink } from "react-router-dom";
-import { Button, Col, Form, Input, Row } from "reactstrap";
+import { Col, Form, Input, Row } from "reactstrap";
 
 export class Footer extends Component {
   render() {

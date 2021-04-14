@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Drawer from "./Drawer";
 // import { NavLink } from "react-router-dom";
 import {
-  Button,
   Col,
   Form,
   Input,
@@ -14,7 +13,7 @@ import {
 } from "reactstrap";
 
 export class Header extends Component {
-  state = { modal: false, register: false, dark: false };
+  state = { modal: false, register: false, dark: true };
   darkTheme = (e) => {
     e.preventDefault();
     if (!this.state.dark) {
@@ -101,7 +100,10 @@ export class Header extends Component {
           isOpen={this.state.modal}
           toggle={this.toggle}
         >
-          <ModalHeader toggle={this.toggle} className="primary-bg-cust ">
+          <ModalHeader
+            toggle={this.toggle}
+            className="primary-bg-cust gold-text-cust "
+          >
             {this.state.register ? "Register" : "Login"}
           </ModalHeader>
           <ModalBody className="primary-bg-cust">
@@ -118,6 +120,7 @@ export class Header extends Component {
                   e.preventDefault();
                   this.setState({ register: true });
                 }}
+                className="gold-text-cust"
               >
                 Don't have an account?
               </p>
@@ -142,6 +145,7 @@ export class Header extends Component {
                   e.preventDefault();
                   this.setState({ register: false });
                 }}
+                className="gold-text-cust"
               >
                 Already have an account?
               </p>
