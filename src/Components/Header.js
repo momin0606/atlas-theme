@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Drawer from "./Drawer";
 // import { NavLink } from "react-router-dom";
 import {
@@ -9,8 +9,10 @@ import {
   Modal,
   ModalBody,
   ModalHeader,
+  NavItem,
   Row,
 } from "reactstrap";
+import { connect } from "react-redux";
 
 export class Header extends Component {
   state = { modal: false, register: false, dark: true };
@@ -29,9 +31,10 @@ export class Header extends Component {
     this.setState({ modal: !this.state.modal });
   };
   render() {
+    var { uid } = this.props;
     return (
       <>
-        <div className="fixed-top nav-div p-0">
+        <div id="navbar" className="fixed-top nav-div p-0">
           <Row style={{ width: "100%" }}>
             <Col>
               {" "}
@@ -58,12 +61,15 @@ export class Header extends Component {
                 className="m-2 nav-top-btn"
                 size="sm"
                 onClick={this.toggle}
+                hidden={uid}
               >
                 Login/Register
               </button>
-              <button className="m-2 nav-top-btn" size="sm">
-                <i className="fas fa-heart"></i>
-              </button>
+              <Link hidden={!uid} to="/favorites">
+                <button className="m-2 nav-top-btn" size="sm">
+                  <i className="fas fa-heart"></i>
+                </button>
+              </Link>
               {/* <Button className="m-2" style={navTopBtn} size="sm">
                 <i className="fas fa-shopping-cart"></i>
               </Button> */}
@@ -72,26 +78,35 @@ export class Header extends Component {
           </Row>
           <Row style={{ width: "100%" }}>
             <Col lg={{ size: 8, offset: 2 }} className="text-center">
-              <Link to="/">
-                <button className="m-2 nav-btn active" size="sm">
-                  Home
-                </button>
-              </Link>
-              <Link to="/womencollection">
-                <button className="m-2 nav-btn" size="sm">
-                  Women's Collection
-                </button>
-              </Link>
-              <Link to="/bedsheets">
-                <button className="m-2 nav-btn" size="sm">
-                  Bedsheets
-                </button>
-              </Link>
-              <Link to="/contactus">
-                <button className="m-2 nav-btn" size="sm">
-                  Contact Us
-                </button>
-              </Link>
+              <NavLink
+                exact
+                to="/"
+                className="m-2 nav-btn"
+                activeClassName="active"
+              >
+                Home
+              </NavLink>
+              <NavLink
+                to="/womencollection"
+                className="m-2 nav-btn"
+                activeClassName="active"
+              >
+                Women's Collection
+              </NavLink>
+              <NavLink
+                to="/bedsheets"
+                className="m-2 nav-btn"
+                activeClassName="active"
+              >
+                Bedsheets
+              </NavLink>
+              <NavLink
+                to="/contactus"
+                className="m-2 nav-btn"
+                activeClassName="active"
+              >
+                Contact Us
+              </NavLink>
             </Col>
           </Row>
         </div>
@@ -157,4 +172,23 @@ export class Header extends Component {
   }
 }
 
-export default Header;
+export function mapStateToProps(state) {
+  return {
+    uid: state.auth.uid,
+    loading: state.auth.requested,
+    registered: state.auth.registered,
+    suits: state.suits.suits,
+    bedsheets: state.bedsheets.bedsheets,
+  };
+}
+export function mapDispatchToProps(dispatch) {
+  return {
+    // getSuits: () => dispatch(getSuits()),
+    // getBedSheets: () => dispatch(getBedSheets()),
+    // login: (credentials) => dispatch(login(credentials)),
+    // register: (credentials, password) =>
+    // dispatch(register(credentials, password)),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

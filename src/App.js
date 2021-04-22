@@ -3,7 +3,7 @@ import "./App.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Components/Header";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import Footer from "./Components/Footer";
 import Home from "./Views/Home";
 import WomenCollection from "./Views/WomenCollection";

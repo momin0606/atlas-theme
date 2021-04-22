@@ -13,12 +13,21 @@
   --textColorCust: white !important;
 }
 .primary-cust-text {
-  color: var(--textColorCust);
+  color: var(--textColorCust) !important;
 }
 video {
   width: 100%;
 }
-
+.MuiBadge-colorPrimary {
+  color: var(--primaryCust) !important;
+  background-color: var(--goldCust) !important;
+}
+.MuiBadge-anchorOriginTopRightRectangle {
+  top: 0;
+  right: 0;
+  transform: none !important;
+  transform-origin: 100% 0%;
+}
 html {
   overflow-x: hidden;
   font-family: "Belleza", sans-serif;
@@ -45,6 +54,11 @@ body {
   box-shadow: 0px 1px 5px var(--textColorCust);
   overflow-x: hidden;
   background: var(--primaryCust);
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+.MuiPaper-root {
+  background: var(--primaryCust) !important;
 }
 .footer-div {
   width: 100%;
